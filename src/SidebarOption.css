@@ -1,0 +1,10 @@
+.sidebarOption {
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    transition: 400ms background ease-in;
+}
+
+.sidebarOption:hover {
+    background: #EE4950;
+}

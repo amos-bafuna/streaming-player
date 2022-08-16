@@ -1,0 +1,14 @@
+.sidebar {
+    flex: 0.2;
+    height: 100vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 230px;
+    background: #272727;
+    color: #fff;
+}
+
+.sidebar_logo {
+    padding: 15px 0;
+    cursor: pointer;
+}

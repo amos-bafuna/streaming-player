@@ -6,7 +6,6 @@ import Song from "./Song";
 
 function Home() {
 	const [{ recentplayed, newrelease }] = useDataLayerValue();
-	console.log(newrelease);
 	return (
 		<div className="body">
 			<div className="banner">

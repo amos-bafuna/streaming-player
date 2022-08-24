@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function SidebarOption({ title, Icon, link }) {
 	return (
 		<div>
-			<Link to={link} className="sidebarOption">
+			<Link to={link ?? ""} className="sidebarOption">
 				{Icon && <Icon className="sidebarOptionIcon" />}
 				<p>{title}</p>
 			</Link>

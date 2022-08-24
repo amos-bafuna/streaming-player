@@ -16,13 +16,20 @@ function Sidebar() {
 
 				<SidebarOption Icon={HomeIcon} title="Home" link="/" />
 				<SidebarOption Icon={SearchIcon} title="Search" link="/search" />
+				<SidebarOption
+					Icon={PlaylistAddIcon}
+					title="Favorite"
+					link="/playlist"
+				/>
 
 				<br />
 				<strong className="sidebarTitle">Playlist</strong>
 				<hr />
-				{playlists?.items?.map((playlist) => (
-					<SidebarOption title={playlist.name} />
-				))}
+				{playlists &&
+					playlists.items &&
+					playlists.items.map((playlist) => (
+						<SidebarOption title={playlist.name} />
+					))}
 
 				{user && <div className="account">{user.display_name}</div>}
 			</div>

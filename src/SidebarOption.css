@@ -1,10 +1,22 @@
 .sidebarOption {
-    color: #fff;
-    padding: 10px;
-    cursor: pointer;
-    transition: 400ms background ease-in;
+	display: flex;
+	align-items: center;
+	color: #fff;
+	padding: 10px;
+	cursor: pointer;
+	transition: 400ms background ease-in;
+	text-decoration: none;
 }
 
 .sidebarOption:hover {
-    background: #EE4950;
+	background: #ee4950;
+}
+
+.sidebarOptionIcon {
+	padding-right: 15px;
+}
+
+.sidebarOptionIcon > p {
+	margin-top: 10px;
+	margin-left: 20px;
 }

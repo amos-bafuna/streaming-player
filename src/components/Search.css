@@ -1,0 +1,27 @@
+.banner {
+	position: relative;
+	margin: 0 10px;
+}
+
+.banner img {
+	width: 100%;
+	height: auto;
+}
+
+.search_bar {
+	position: absolute;
+	top: 20%;
+	left: 25%;
+	padding: 12px;
+	width: 50%;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.search_bar:focus-visible {
+	outline: none;
+}
+
+.search_body {
+	padding: 20px 10px;
+}

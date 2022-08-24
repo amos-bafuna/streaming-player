@@ -1,0 +1,60 @@
+.search_item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 80px;
+	margin-bottom: 5px;
+	transition: 300ms ease-in-out opacity;
+}
+
+.search_item:hover {
+	color: #fff;
+	opacity: 0.5;
+}
+
+.song_photo {
+	display: flex;
+	align-items: center;
+	flex: 0.1;
+	height: 100%;
+	max-width: 175px;
+	margin: 10px;
+}
+
+.song_title {
+	flex: 0.4;
+}
+
+.song_artist {
+	flex: 0.2;
+}
+
+.song_album {
+	display: flex;
+	justify-content: space-between;
+	flex: 0.3;
+}
+
+.label_title {
+	display: flex;
+	justify-content: space-between;
+	height: 30px;
+}
+
+hr {
+	background: #a19999;
+	border: none;
+	height: 1px;
+	margin-bottom: 5px;
+}
+
+.playBtn {
+	min-width: 40px;
+	font-size: 20px;
+	transition: 300ms ease-in opacity;
+}
+
+.playBtn:hover {
+	opacity: 0.5;
+	cursor: pointer;
+}

@@ -1,7 +1,6 @@
-.footer{
-    position: relative;
-    bottom: O;
-    height: 65px;
-    width: 100%;
-    background: #282828;
+.footer {
+	position: absolute;
+	height: 65px;
+	width: 100%;
+	background: #282828;
 }

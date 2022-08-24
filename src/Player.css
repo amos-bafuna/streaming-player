@@ -1,3 +1,9 @@
-.player-body{
-    display: flex;
+.player-body {
+	display: flex;
+}
+
+.footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
 }

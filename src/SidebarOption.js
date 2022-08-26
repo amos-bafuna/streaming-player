@@ -1,14 +1,19 @@
 import React from "react";
 import "./SidebarOption.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-function SidebarOption({ title, Icon, link }) {
+function SidebarOption({ title, Icon, link, cle }) {
 	return (
-		<div>
-			<Link to={link ?? ""} className="sidebarOption">
+		<div key={cle}>
+			<NavLink
+				to={link ?? ""}
+				className={({ isActive }) =>
+					isActive ? "is-active sidebarOption" : "sidebarOption"
+				}
+			>
 				{Icon && <Icon className="sidebarOptionIcon" />}
 				<p>{title}</p>
-			</Link>
+			</NavLink>
 		</div>
 	);
 }

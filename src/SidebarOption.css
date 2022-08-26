@@ -12,6 +12,10 @@
 	background: #ee4950;
 }
 
+.is-active {
+	background: #ee4950;
+}
+
 .sidebarOptionIcon {
 	padding-right: 15px;
 }

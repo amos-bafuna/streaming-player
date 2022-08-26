@@ -4,7 +4,7 @@ import { useDataLayerValue } from "./DataLayer";
 import SidebarOption from "./SidebarOption";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
-import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import LoyaltyRoundedIcon from "@mui/icons-material/LoyaltyRounded";
 import "./Sidebar.css";
 
 function Sidebar() {
@@ -14,12 +14,18 @@ function Sidebar() {
 			<div className="sidebar">
 				<img src={Logo} alt="Logo" className="sidebar_logo" />
 
-				<SidebarOption Icon={HomeIcon} title="Home" link="/" />
-				<SidebarOption Icon={SearchIcon} title="Search" link="/search" />
+				<SidebarOption Icon={HomeIcon} title="Home" link="/" key={"a"} />
 				<SidebarOption
-					Icon={PlaylistAddIcon}
+					Icon={SearchIcon}
+					title="Search"
+					link="/search"
+					key={"b"}
+				/>
+				<SidebarOption
+					Icon={LoyaltyRoundedIcon}
 					title="Favorite"
-					link="/playlist"
+					link="/favorite"
+					key={"c"}
 				/>
 
 				<br />
@@ -27,8 +33,12 @@ function Sidebar() {
 				<hr />
 				{playlists &&
 					playlists.items &&
-					playlists.items.map((playlist) => (
-						<SidebarOption title={playlist.name} />
+					playlists.items.map((playlist, index) => (
+						<SidebarOption
+							key={index}
+							title={playlist.name}
+							link="./playlist"
+						/>
 					))}
 
 				{user && <div className="account">{user.display_name}</div>}

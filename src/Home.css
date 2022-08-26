@@ -31,27 +31,40 @@
 	width: 180px;
 	height: 250px;
 	margin: 10px;
-	border: 1px solid #202229;
+	background: #212325;
 	border-radius: 15px;
 	padding: 10px;
 	transition: 200ms ease-in all;
 }
 
 .song_container:hover {
-	filter: drop-shadow(5px 5px 5px #ca444a);
-	opacity: 0.8;
+	opacity: 0.7;
 }
 
-.song_footer {
-	display: flex;
-	justify-content: space-around;
-	align-items: flex-end;
+.song_img {
+	position: relative;
+	width: 180px;
+	height: 180px;
+	border-radius: 10px;
 }
 
-.song_footer > svg {
+.song_img > svg {
+	position: absolute;
+	bottom: 0;
+	right: 0;
 	font-size: 40px;
 	color: #ee4950;
 	min-width: 40px;
+	margin: 10px;
+}
+
+.song_img > svg:hover {
+	color: #fff;
+}
+
+.song_title {
+	font-weight: 400;
+	color: gray;
 }
 
 .song_footer > svg:hover {

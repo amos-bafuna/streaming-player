@@ -6,7 +6,15 @@ import { BsPlayCircleFill } from "react-icons/bs";
 function SearchItem({ track, artist, album, image, uri }) {
 	const [dispatch] = useDataLayerValue();
 	return (
-		<div className="search_item">
+		<div
+			className="search_item"
+			onDoubleClick={() => {
+				dispatch({
+					type: "SET_URIS",
+					uris: uri,
+				});
+			}}
+		>
 			<div className="song_photo">
 				<img src={image} alt="" />
 			</div>

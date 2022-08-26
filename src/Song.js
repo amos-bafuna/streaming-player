@@ -3,16 +3,19 @@ import { useDataLayerValue } from "./DataLayer";
 import { BsPlayCircleFill } from "react-icons/bs";
 
 function Song({ title, bg, id, artist, uri }) {
-	const [{}, dispatch] = useDataLayerValue();
+	const [dispatch] = useDataLayerValue();
 	return (
 		<div
 			key={id}
 			className="song_container"
-			style={{ background: `url(${bg})` }}
+			onDoubleClick={() => {
+				dispatch({
+					type: "SET_URIS",
+					uris: uri,
+				});
+			}}
 		>
-			<h4 className="artist_name">{artist}</h4>
-			<div className="song_footer">
-				<h3 className="song_title">{title}</h3>
+			<div className="song_img" style={{ background: `url(${bg})` }}>
 				<BsPlayCircleFill
 					onClick={() => {
 						dispatch({
@@ -21,6 +24,10 @@ function Song({ title, bg, id, artist, uri }) {
 						});
 					}}
 				/>
+			</div>
+			<h4 className="artist_name">{artist}</h4>
+			<div className="song_footer">
+				<h4 className="song_title">{title}</h4>
 			</div>
 		</div>
 	);

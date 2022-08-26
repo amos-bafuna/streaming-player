@@ -5,10 +5,11 @@ import Banner from "../images/bannerSearch.png";
 import "./Search.css";
 import spotifyContext from "../spotifyContext";
 import SearchItem from "./SearchItem";
+import SyncLoader from "react-spinners/SyncLoader";
 
 function Search() {
 	const [search, setSearch] = useState("");
-	const [artists, setArtists] = useState(null);
+	//const [artists, setArtists] = useState(null);
 	const [tracks, setTracks] = useState(null);
 
 	const spotify = useContext(spotifyContext);
@@ -24,18 +25,15 @@ function Search() {
 		});
 		prev.then(
 			function (data) {
-				// clean the promise so it doesn't call abort
 				setTracks(data.tracks.items);
-				setArtists(data.artists.items);
+				//setArtists(data.artists.items);
 				prev = null;
-
-				// ...render list of search results...
 			},
 			function (err) {
 				console.error(err);
 			}
 		);
-	}, [search]);
+	}, [search, spotify]);
 
 	return (
 		<div className="body">
@@ -57,16 +55,20 @@ function Search() {
 					<div className="song_album">Album</div>
 				</div>
 				<hr />
-				{tracks &&
-					tracks.map((track) => (
+				{tracks ? (
+					tracks.map((track, index) => (
 						<SearchItem
 							track={track.name}
 							artist={track.artists[0].name}
 							album={track.album.name}
 							image={track.album.images[2].url}
 							uri={track.uri}
+							key={index}
 						/>
-					))}
+					))
+				) : (
+					<SyncLoader color="#fff" />
+				)}
 			</div>
 		</div>
 	);

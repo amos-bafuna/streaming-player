@@ -5,7 +5,7 @@ import Banner from "../images/bannerSearch.png";
 import "./Search.css";
 import spotifyContext from "../spotifyContext";
 import SearchItem from "./SearchItem";
-import SyncLoader from "react-spinners/SyncLoader";
+//import SyncLoader from "react-spinners/SyncLoader";
 
 function Search() {
 	const [search, setSearch] = useState("");
@@ -55,7 +55,7 @@ function Search() {
 					<div className="song_album">Album</div>
 				</div>
 				<hr />
-				{tracks ? (
+				{tracks &&
 					tracks.map((track, index) => (
 						<SearchItem
 							track={track.name}
@@ -65,10 +65,7 @@ function Search() {
 							uri={track.uri}
 							key={index}
 						/>
-					))
-				) : (
-					<SyncLoader color="#fff" />
-				)}
+					))}
 			</div>
 		</div>
 	);

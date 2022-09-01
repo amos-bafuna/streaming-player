@@ -31,15 +31,17 @@ function Sidebar() {
 				<br />
 				<strong className="sidebarTitle">Playlist</strong>
 				<hr />
-				{playlists &&
-					playlists.items &&
-					playlists.items.map((playlist, index) => (
-						<SidebarOption
-							key={index}
-							title={playlist.name}
-							link="./playlist"
-						/>
-					))}
+				<div className="playlist_list">
+					{playlists &&
+						playlists.items &&
+						playlists.items.map((playlist, index) => (
+							<SidebarOption
+								key={index}
+								title={playlist.name}
+								link="./playlist"
+							/>
+						))}
+				</div>
 
 				{user && <div className="account">{user.display_name}</div>}
 			</div>

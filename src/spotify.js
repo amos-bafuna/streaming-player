@@ -1,5 +1,5 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirectUri = window.location.origin; //"http://localhost:3000"; //"https://auditica.vercel.app";
+const redirectUri = window.location.origin;
 const clientID = "6fabc1dae45949e0b89128fb08d4061d";
 
 const scopes = [

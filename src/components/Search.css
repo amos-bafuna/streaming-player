@@ -25,3 +25,10 @@
 .search_body {
 	padding: 20px 10px;
 }
+
+@media screen and (max-width: 730px) {
+	.search_bar {
+		position: relative;
+		margin: 10px;
+	}
+}

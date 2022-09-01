@@ -28,10 +28,10 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 180px;
-	height: 250px;
+	width: 150px;
+	height: 220px;
 	margin: 10px;
-	background: #212325;
+	background: #252727b6;
 	border-radius: 15px;
 	padding: 10px;
 	transition: 200ms ease-in all;
@@ -43,8 +43,8 @@
 
 .song_img {
 	position: relative;
-	width: 180px;
-	height: 180px;
+	width: 150px;
+	height: 150px;
 	border-radius: 10px;
 }
 
@@ -69,4 +69,25 @@
 
 .song_footer > svg:hover {
 	color: #fff;
+}
+
+@media screen and (max-width: 730px) {
+	.banner {
+		display: block;
+		height: auto;
+	}
+
+	.banner img {
+		display: none;
+	}
+
+	.song_container {
+		width: 120px;
+		height: 200px;
+	}
+
+	.song_img {
+		width: 120px;
+		height: 130px;
+	}
 }

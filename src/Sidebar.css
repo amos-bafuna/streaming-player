@@ -33,3 +33,30 @@
 	bottom: 30px;
 	z-index: 3;
 }
+
+@media only screen and (max-width: 915px) {
+	.sidebar_container {
+		background: #272727;
+		width: auto;
+	}
+
+	.sidebar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		background: #272727;
+	}
+
+	.sidebarTitle,
+	hr,
+	.playlist_list {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 515px) {
+	.sidebarOptionIcon {
+		display: none;
+	}
+}

@@ -25,8 +25,9 @@
 	margin-left: 20px;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 915px) {
 	.sidebarOption {
 		display: none;
+		transition: all 0.3s ease;
 	}
 }

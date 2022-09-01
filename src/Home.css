@@ -91,3 +91,11 @@
 		height: 130px;
 	}
 }
+
+@media screen and (max-width: 420px) {
+	.bodyList {
+		flex-wrap: nowrap;
+		overflow: scroll;
+		justify-content: flex-start;
+	}
+}

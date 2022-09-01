@@ -5,6 +5,7 @@
 	width: 230px;
 	background: #272727;
 	color: #fff;
+	transition: all 0.3 ease;
 }
 
 .sidebar {
@@ -26,6 +27,10 @@
 	margin-left: 10px;
 	padding: 5px;
 	font-size: 20px;
+}
+
+.hambourger_menu {
+	display: none;
 }
 
 .account {
@@ -55,8 +60,11 @@
 	}
 }
 
-@media only screen and (max-width: 515px) {
-	.sidebarOptionIcon {
-		display: none;
+@media only screen and (max-width: 915px) {
+	.hambourger_menu {
+		display: block;
+		padding: 10px 0;
+		text-align: center;
+		cursor: pointer;
 	}
 }

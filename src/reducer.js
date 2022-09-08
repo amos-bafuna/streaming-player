@@ -52,6 +52,11 @@ const reducer = (state, action) => {
 				...state,
 				savedTracks: action.savedTracks,
 			};
+		case "GET_FEATUREDPLAYLISTS":
+			return {
+				...state,
+				featuredPlaylists: action.featuredPlaylists,
+			};
 
 		default:
 			return state;

@@ -34,15 +34,31 @@
 }
 
 .account {
+	display: flex;
+	justify-content: center;
 	position: fixed;
-	bottom: 30px;
+	bottom: 70px;
 	z-index: 3;
+	padding: 10px;
+	border-radius: 100%;
+}
+
+.account > div {
+	padding: 0 10px;
+}
+
+.log_out {
+	color: #ee4950;
+	cursor: pointer;
+	font-size: 25px;
 }
 
 @media only screen and (max-width: 915px) {
 	.sidebar_container {
 		background: #272727;
 		width: auto;
+		position: fixed;
+		z-index: 10;
 	}
 
 	.sidebar {
@@ -55,16 +71,20 @@
 
 	.sidebarTitle,
 	hr,
-	.playlist_list {
+	.playlist_list,
+	.user_name {
 		display: none;
 	}
-}
 
-@media only screen and (max-width: 915px) {
 	.hambourger_menu {
 		display: block;
 		padding: 10px 0;
 		text-align: center;
 		cursor: pointer;
+	}
+
+	.account {
+		top: 12px;
+		right: 0;
 	}
 }

@@ -71,7 +71,17 @@
 	color: #fff;
 }
 
+@media screen and (max-width: 915px) {
+	.banner img {
+		margin-top: 50px;
+	}
+}
+
 @media screen and (max-width: 730px) {
+	.body {
+		padding-top: 75px;
+	}
+
 	.banner {
 		display: block;
 		height: auto;

@@ -13,11 +13,15 @@ function App() {
 	const [{ token }, dispatch] = useDataLayerValue();
 
 	useEffect(() => {
+		let _token = localStorage.getItem("localToken");
+
 		const hash = getTokenFromUrl();
-		window.location.hash = "";
+		if (hash.access_token) {
+			window.location.hash = "";
 
-		const _token = hash.access_token;
-
+			_token = hash.access_token;
+			localStorage.setItem("localToken", _token);
+		}
 		if (_token) {
 			dispatch({
 				type: "SET_TOKEN",
@@ -26,12 +30,23 @@ function App() {
 
 			spotify.setAccessToken(_token);
 
-			spotify.getMe().then((user) => {
-				dispatch({
-					type: "SET_USER",
-					user: user,
+			spotify
+				.getMe()
+				.then((user) => {
+					dispatch({
+						type: "SET_USER",
+						user: user,
+					});
+				})
+				.catch((err) => {
+					if (err.status === 401) {
+						localStorage.removeItem("localToken");
+						dispatch({
+							type: "SET_TOKEN",
+							token: null,
+						});
+					}
 				});
-			});
 
 			spotify.getUserPlaylists().then((playlists) => {
 				dispatch({
@@ -47,28 +62,35 @@ function App() {
 				});
 			});
 
-			spotify.getMyRecentlyPlayedTracks({ limit: 12 }).then((recentplayed) => {
+			spotify.getMyRecentlyPlayedTracks({ limit: 15 }).then((recentplayed) => {
 				dispatch({
 					type: "SET_RECENTPLAYED",
 					recentplayed: recentplayed,
 				});
 			});
 
-			spotify.getNewReleases({ limit: 12 }).then((newrelease) => {
+			spotify.getNewReleases({ limit: 15 }).then((newrelease) => {
 				dispatch({
 					type: "SET_NEWRELEASE",
 					newrelease: newrelease,
 				});
 			});
 
-			spotify.getMySavedTracks({ limit: 12 }).then((savedTracks) => {
+			spotify.getMySavedTracks({ limit: 15 }).then((savedTracks) => {
 				dispatch({
 					type: "GET_SAVEDTRACK",
 					savedTracks: savedTracks,
 				});
 			});
+
+			spotify.getFeaturedPlaylists().then((featuredPlaylists) => {
+				dispatch({
+					type: "GET_FEATUREDPLAYLISTS",
+					featuredPlaylists: featuredPlaylists,
+				});
+			});
 		}
-	});
+	}, [dispatch]);
 
 	return (
 		<spotifyContext.Provider value={spotify}>

@@ -6,6 +6,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import LoyaltyRoundedIcon from "@mui/icons-material/LoyaltyRounded";
 import { AiOutlineMenu } from "react-icons/ai";
+import { BiLogOutCircle } from "react-icons/bi";
 import { CgCloseO } from "react-icons/cg";
 import "./Sidebar.css";
 import { useState } from "react";
@@ -84,7 +85,20 @@ function Sidebar() {
 						))}
 				</div>
 
-				{user && <div className="account">{user.display_name}</div>}
+				{user && (
+					<div className="account">
+						<div className="user_name">{user.display_name}</div>
+						<div
+							className="log_out"
+							onClick={() => {
+								localStorage.removeItem("localToken");
+								window.location = "/";
+							}}
+						>
+							<BiLogOutCircle />
+						</div>
+					</div>
+				)}
 			</div>
 		</div>
 	);
